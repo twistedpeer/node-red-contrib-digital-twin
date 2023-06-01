@@ -8,6 +8,7 @@
             dtType: { value: "Generic" },
             aContext: { value: "" },
             aId: { value: "" },
+            wcet: { value: "" },
         },
         inputs: 1,
         outputs: 1,
@@ -32,6 +33,14 @@
                 }
             });
         },
+        oneditprepare: function() {
+            var node = this;
+
+            $("#node-input-dtType").on("change", function(e) {
+                var val = $(this).val();
+                $(".node-row-software").toggle(val==='Software');
+            });
+        },
     });
 </script>
 
@@ -40,9 +49,7 @@
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name" />
         <br />
-        <label for="node-input-aContext"
-            ><i class="fa fa-tag"></i> @context</label
-        >
+        <label for="node-input-aContext"><i class="fa fa-tag"></i> @context</label>
         <input type="text" id="node-input-aContext" placeholder="Context" />
         <br />
         <label for="node-input-aId"><i class="fa fa-tag"></i> @id</label>
@@ -60,7 +67,14 @@
             <option value="Environment">Environment</option>
             <option value="Personnel">Personnel</option>
             <option value="SupportingDocuments">SupportingDocuments</option>
+            <option value="Software">Software</option>
         </select>
+    </div>
+    <div class="node-row-software">
+        <div class="form-row">
+            <label for="node-input-wcet"><i class="fa fa-tag">WCET</i></label>
+            <input type="text" id="node-input-wcet" placeholder="put time here..." />
+        </div>
     </div>
     <div class="form-tips"><b>Tip:</b> This is here to help.</div>
 </script>
