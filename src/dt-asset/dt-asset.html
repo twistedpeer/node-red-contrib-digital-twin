@@ -8,7 +8,14 @@
             aDTType: { value: "Generic" },
             aContext: { value: "" },
             aId: { value: "" },
-            wcet: { value: "" },
+            wcet: { value: "", validate:function(v) {
+                var selection = $("#node-input-aDTType").val();
+                if (selection === "Software") {
+                    const re = /^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$/;
+                    return re.exec(v);
+                }
+                return true;
+            } },
         },
         inputs: 1,
         outputs: 1,
