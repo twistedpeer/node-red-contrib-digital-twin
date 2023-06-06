@@ -37,6 +37,7 @@ export interface DTAssetNodeDef extends DTNodeDef {
   properties: DTPropertyNodeDef[];
   actions: DTActionNodeDef[];
   events: DTEventNodeDef[];
+  wcet: string;
 }
 
 export interface DTModelNodeDef extends DTNodeDef {

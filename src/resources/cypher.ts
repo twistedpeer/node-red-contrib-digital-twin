@@ -43,7 +43,9 @@ export class Cypher {
             cypher.push(
                 `MERGE (${assetAlias}:Asset {nodered_id: '${asset.id}'}) 
                 SET ${assetAlias}.name = '${asset.name}',
-                    ${assetAlias}.nodered_type = '${asset.type}'`);
+                    ${assetAlias}.nodered_type = '${asset.type}',
+                    ${assetAlias}.aDTType = '${asset.aDTType}',
+                    ${assetAlias}.wcet = '${asset.wcet}'`);
 
             if (asset.properties) {
                 for (let property of asset.properties) {
