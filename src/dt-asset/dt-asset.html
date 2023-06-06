@@ -5,7 +5,7 @@
         color: "#C7E9C0",
         defaults: {
             name: { value: "" },
-            dtType: { value: "Generic" },
+            aDTType: { value: "Generic" },
             aContext: { value: "" },
             aId: { value: "" },
             wcet: { value: "" },
@@ -36,7 +36,7 @@
         oneditprepare: function() {
             var node = this;
 
-            $("#node-input-dtType").on("change", function(e) {
+            $("#node-input-aDTType").on("change", function(e) {
                 var val = $(this).val();
                 $(".node-row-software").toggle(val==='Software');
             });
@@ -55,8 +55,8 @@
         <label for="node-input-aId"><i class="fa fa-tag"></i> @id</label>
         <input type="text" id="node-input-aId" placeholder="@id" />
         <br />
-        <label for="node-input-dtType"><i class="fa fa-tag"></i> DT Type</label>
-        <select id="node-input-dtType">
+        <label for="node-input-aDTType"><i class="fa fa-tag"></i> DT Type</label>
+        <select id="node-input-aDTType">
             <option value="Generic">Generic</option>
             <option value="Part">Part</option>
             <option value="Product">Product</option>
